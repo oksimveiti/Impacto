@@ -354,8 +354,13 @@
     });
   </script>
 
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjD5D9MYiLHerfbG8pboypbl9SwCOqQc0&libraries=places"></script>
+  <script type="module">
+    import { GOOGLE_MAPS_API_KEY } from '../../config/config.js';
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`;
+    script.async = true;
+    document.head.appendChild(script);
+  </script>
   <script type="module" src="../js/frontend/profileSetup.js" defer></script>
   <script type="module" src="../../bottom-sheet/js/frontend/live-chat.js"></script>
 </body>

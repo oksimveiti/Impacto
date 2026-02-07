@@ -159,8 +159,13 @@
   <script type="module" src="../js/settings.js"></script>
   <script type="module" src="../js/frontend/settings-ui.js"></script>
   <!-- <script type="module" src="../../account-settings/js/frontend/account-settings.js"></script> -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjD5D9MYiLHerfbG8pboypbl9SwCOqQc0&libraries=places"></script>
+  <script type="module">
+    import { GOOGLE_MAPS_API_KEY } from '../../config/config.js';
+    const script = document.createElement('script');
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`;
+    script.async = true;
+    document.head.appendChild(script);
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
