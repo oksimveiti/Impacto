@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="../js/backend/auth-sign-up-back.js" type="module" defer></script>
+  <!-- Todo: I might need to discuss how to search the event  -->
+  <link rel="stylesheet" href="./authentication-Francisco/css/open-page-style.css" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./common-css.css" />
+  <title>Onboarding page</title>
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="./media/logo.png" alt="impacto-logo" class="logo" />
+      <h1>impacto</h1>
+    </div>
+
+    <!-- <div class="search-bar-container">
+      <input type="text" class="search-input" placeholder="Search events">
+      <input type="text" class="location-input" placeholder="Vancouver">
+      <button class="search-button" onclick="performSearch()"><span class="fas fa-magnifying-glass"></span><span
+          class="visually-hidden">search</span></button>
+    </div> -->
+
+    <div class="signUp-logIn-container">
+      <button class="sign-up">
+        <a href="./authentication-Francisco/html/sign-up.html">Sign up</a>
+      </button>
+      <button class="log-in">
+        <a href="./authentication-Francisco/html/log-in.html">Log in</a>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="feature-post">
+      <div class="feature-post-text">
+        <h2 class="feature-slogan">Tap to Raise, Act to Impact</h2>
+        <h2 class="feature-slogan-mobile">: impacto</h2>
+        <p>
+          Impacto is a platform where you can share social issues, gather
+          support, and organize actions. Use real-time chat and live maps to
+          drive meaningful change.
+        </p>
+        <button class="get-started">
+          <a href="./authentication-Francisco/html/sign-up.html">Get Started</a>
+        </button>
+      </div>
+
+      <div class="image-wrapper">
+        <img class="feature-post-image"
+          src="https://images.unsplash.com/photo-1679757020290-4d569d2bd59c?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Potest image" />
+      </div>
+    </section>
+
+    <section class="service-section">
+      <h2>Services</h2>
+      <p>
+        At impacto, we provide powerful tools to help individuals and
+        communities take action, organize movements, and drive real social
+        change.
+        <br />
+        Whether you're raising awareness, mobilizing supporters, or
+        coordinating events, impacto gives you everything you need to make a
+        difference.
+      </p>
+    </section>
+
+    <section class="four-blocks">
+      <div class="grid-block grid-block1">
+        <h3>Raise Awareness</h3>
+        <p>Share issues and gain support.</p>
+      </div>
+
+      <div class="grid-block grid-block2">
+        <h3>Real-Time Discussion & Connection</h3>
+        <p>Engage in live chats and plan actions.</p>
+      </div>
+
+      <div class="grid-block grid-block3">
+        <h3>Live Map & Events</h3>
+        <p>Find and join local movements.</p>
+      </div>
+
+      <div class="grid-block grid-block4">
+        <h3>Petition & Advocacy</h3>
+        <p>Amplify your voice for real impact.</p>
+      </div>
+    </section>
+
+    <section class="atImpacto">
+      <h3>
+        "At Impacto, we provide a range of tools to help you create real
+        change."
+      </h3>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo-impacto-container">
+      <img src="./media/logo/Logo-BW.svg" alt="impacto-logo" class="logo" />
+      <!-- <h2>impacto</h2> -->
+    </div>
+
+    <p class="footer-slogan">Tep to raise. Act to impact.</p>
+
+    <div class="social-media-logos">
+      <i class="fab fa-facebook fa-2x"></i>
+      <i class="fab fa-instagram fa-2x"></i>
+      <i class="fab fa-x-twitter fa-2x"></i>
+    </div>
+
+    <div class="copyright-container">
+      <p>© 2025 Impacto All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+
+  <!-- オフライン時の通知用
+  <div id="offline-notification" style="display: none">
+    Now It shows in offline mode
+  </div> -->
+
+  <script>
+    // オンライン/オフライン状態の監視
+
+    // window.addEventListener("offline", function () {
+    //   window.location.href = "/authentication-Francisco/html/offline.html";
+    // });
+
+    async function registerSW() {
+      if ('serviceWorker' in navigator) {
+        try {
+          const reg = await navigator.serviceWorker.register("/service-worker.js");
+          console.log(`Service Worker registered successfully`, reg);
+        } catch (error) {
+          console.log(`Service Worker registration Error :${error}`);
+        }
+      }
+    }
+
+    window.addEventListener("load", registerSW);
+
+
+  </script>
+
+
+</body>
+
+</html>

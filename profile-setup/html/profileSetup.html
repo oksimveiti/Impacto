@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete Your Profile | Impecto</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="header-left">
+      <a href="#" class="logo-link">
+        <img src="../../media/icons/Logo - CL.svg" class="logo" style="height: 60px;" />
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+
+    <div class="step-indicator">
+      <div class="step-dot" data-step="1"></div>
+      <div class="step-dot" data-step="2"></div>
+      <div class="step-dot" data-step="3"></div>
+      <div class="step-dot" data-step="4"></div>
+    </div>
+
+    <form id="profileSetupForm">
+      <div class="step" data-step="1">
+        <!-- Basic Info Section -->
+        <fieldset>
+          <legend>Basic Information</legend>
+
+          <div class="field-group">
+            <label for="profilePicture">Profile Picture (optional)</label>
+            <div class="profile-upload">
+              <img id="profilePreview" alt="Profile preview" style="display: none" />
+              <input type="file" id="profilePicture" accept="image/jpeg" />
+              <p class="hint-text">JPEG, max 5MB</p>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="bio">Bio (optional)</label>
+            <textarea id="bio" name="bio" rows="4" maxlength="500" required></textarea>
+            <p class="hint-text"><span id="bioCount">0</span>/500 characters</p>
+          </div>
+
+          <div class="field-group">
+            <label for="gender">Gender (optional)</label>
+            <select id="gender" name="gender">
+              <option value="" disabled selected>Please select one</option>
+              <option value="">Prefer not to say</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="non-binary">Non-binary</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="step" data-step="2">
+        <!-- Interests Section -->
+        <fieldset>
+          <legend>Your Interests</legend>
+
+          <div class="field-group">
+            <label for="hobby-1">Hobbies (optional)</label>
+            <div id="hobbiesDisplay"></div>
+            <div id="hobbiesContainer">
+              <div class="hobby-input">
+                <input type="text" id="hobby-1" class="hobby" placeholder="Enter a hobby" />
+                <button type="button" class="add-hobby">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label id="interest-label">Pick What Matters to You (required)</label>
+            <h5>Pick the categories that inspire you!</h5>
+
+            <div class="interests-grid">
+              <!-- Social Activism -->
+              <div class="interest-item" data-interest="Social Activism">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/social.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/social_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/social_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Social Activism</div>
+              </div>
+
+              <!-- Environment -->
+              <div class="interest-item" data-interest="Environment">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/environment.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/environment_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/environment_selected.png"
+                    alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Environment</div>
+              </div>
+
+              <!-- Politics -->
+              <div class="interest-item" data-interest="Politics">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/politics.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/politics_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/politics_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Politics</div>
+              </div>
+
+              <!-- Education -->
+              <div class="interest-item" data-interest="Education">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/education.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/education_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/education_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Education</div>
+              </div>
+
+              <!-- Community -->
+              <div class="interest-item" data-interest="Community">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/community.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/community_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/community_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Community</div>
+              </div>
+
+              <!-- Human Rights -->
+              <div class="interest-item" data-interest="Human Rights">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/human.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/human_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/human_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Human Rights</div>
+              </div>
+
+              <!-- Health -->
+              <div class="interest-item" data-interest="Health">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/health.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/health_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/health_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Health</div>
+              </div>
+
+              <!-- Culture -->
+              <div class="interest-item" data-interest="Culture">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/culture.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/culture_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/culture_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Culture</div>
+              </div>
+
+              <!-- Animal Rights -->
+              <div class="interest-item" data-interest="Animal Rights">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/animal.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/animal_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/animal_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Animal Rights</div>
+              </div>
+
+              <!-- Social Justice -->
+              <div class="interest-item" data-interest="Social Justice">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/justice.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/justice_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/justice_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Social Justice</div>
+              </div>
+
+              <!-- Others -->
+              <div class="interest-item" data-interest="Others">
+                <div class="interest-icon">
+                  <!-- Default icon (normal state) -->
+                  <img class="icon-default" src="../icons/60*60/others.png" alt="Social Activism">
+
+                  <!-- Hover icon (appears on hover when not selected) -->
+                  <img class="icon-hover" src="../icons/60*60/others_hover.png" alt="Social Activism hover">
+
+                  <!-- Selected icon (appears when selected) -->
+                  <img class="icon-selected" src="../icons/60*60/others_selected.png" alt="Social Activism selected">
+                </div>
+                <div class="interest-label">Others</div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="step" data-step="3">
+        <!-- Preferences Section -->
+        <fieldset>
+          <legend>Your Preferences</legend>
+
+          <div class="field-group">
+            <label for="notifications">Notification Preferences (optional)</label>
+            <select id="notifications" name="notifications">
+              <option value="" disabled selected>Please select one</option>
+              <option value="email">Email Only</option>
+              <option value="push">Push Notifications Only</option>
+              <option value="both">Both Email and Push</option>
+              <option value="none">No Notifications</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="privacy">Privacy Level (optional)</label>
+            <select id="privacy" name="privacy">
+              <option value="" disabled selected>Please select one</option>
+              <option value="public">Public Profile</option>
+              <option value="friends">Friends Only</option>
+              <option value="private">Private</option>
+            </select>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="step" data-step="4">
+        <!-- Location Section -->
+        <fieldset>
+          <legend>Location Setup</legend>
+
+          <div class="field-group">
+            <label for="locationType">Location Type (required)</label>
+            <select id="locationType" name="locationType">
+              <option value="gps">Use GPS Location</option>
+              <option value="manual">Enter Manually</option>
+            </select>
+          </div>
+
+          <div id="gpsLocation">
+            <button type="button" id="getLocation">Get My Location</button>
+            <p id="gpsStatus"></p>
+          </div>
+
+          <div id="manualLocation" hidden>
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address" />
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Mobile Navigation Buttons -->
+      <div class="form-actions mobile-only">
+        <button type="button" id="prevBtn">Back</button>
+        <button type="button" id="nextBtn">Next</button>
+        <button type="button" id="reviewMobileBtn" style="display: none;">Review Profile</button>
+      </div>
+
+      <!-- Review Profile Button (Desktop only) -->
+      <div class="form-actions desktop-only">
+        <button type="button" id="reviewProfile">Review Profile</button>
+      </div>
+
+      <!-- Error Display -->
+      <div id="errorDisplay" class="error-container" hidden></div>
+    </form>
+  </main>
+
+  <!-- Firebase -->
+  <script type="module" src="/Impacto/config/config.js"></script>
+
+  <script>
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    function showStep(step) {
+      document.querySelectorAll('.step').forEach(div => {
+        div.classList.remove('active');
+      });
+      const target = document.querySelector(`.step[data-step="${step}"]`);
+      if (target) target.classList.add('active');
+      currentStep = step;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showStep(1);
+
+      document.getElementById('nextBtn')?.addEventListener('click', () => {
+        if (currentStep < totalSteps) showStep(currentStep + 1);
+      });
+
+      document.getElementById('prevBtn')?.addEventListener('click', () => {
+        if (currentStep > 1) showStep(currentStep - 1);
+      });
+    });
+  </script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjD5D9MYiLHerfbG8pboypbl9SwCOqQc0&libraries=places"></script>
+  <script type="module" src="../js/frontend/profileSetup.js" defer></script>
+  <script type="module" src="../../bottom-sheet/js/frontend/live-chat.js"></script>
+</body>
+
+</html>

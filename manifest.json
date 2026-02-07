@@ -1,0 +1,24 @@
+{
+  "name": "Impacto",
+  "short_name": "Impacto",
+  "description": "Event Organize",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#e6e6e6",
+  "theme_color": "#3551a4",
+  "icons": [
+    {
+      "src": "/media/logo/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/media/logo/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "orientation": "portrait",
+  "scope": "/",
+  "prefer_related_applications": false
+}

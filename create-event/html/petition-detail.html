@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Detail</title>
+  <!-- unpkg css library -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css" /> -->
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <!-- event detail css -->
+  <link rel="stylesheet" href="../css/event-detail.css" />
+  <link rel="stylesheet" href="../css/event-petition-detail.css" />
+  <link rel="stylesheet" href="../css/header-mobile.css">
+  <!-- <link rel="stylesheet" href="../css/completion.css"> -->
+  <!-- event detail js -->
+  <link rel="stylesheet" href="../../common-css.css" />
+  <script type="module" src="../js/js/frontend/petition-detail.js"></script>
+
+  <link rel="stylesheet" href="../../header/header.css" />
+  <script type="module" src="../../header/header.js"></script>
+  <link rel="stylesheet" href="../../footer/footer.css">
+  <script type="module" src="../../footer/footer.js"></script>
+  <!-- live chat -->
+  <link rel="stylesheet" href="../../bottom-sheet/css/bottom-sheet.css">
+  <script type="module" src="../../bottom-sheet/js/frontend/live-chat.js"></script>
+  <script src="../js/header-mobile.js"></script>
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="header-left">
+      <a href="../../../home/html/home.html" class="logo-link">
+        <!-- <img src="../../../media/logo.png" alt="Impact Logo" class="logo" />
+          <h1>Impacto</h1> -->
+        <img class="header-logo-blue" src="../../media/icons/Logo - CL.svg" alt="logo">
+      </a>
+      <div class="search-container">
+        <div class="search-inputs">
+          <div class="search-input-wrapper">
+            <input type="text" placeholder="Search events..." id="eventSearch" />
+          </div>
+          <div class="location-input-wrapper">
+            <i class="fas fa-map-marker-alt location-icon"></i>
+            <input type="text" placeholder="Location..." id="locationSearch" />
+            <button class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <div>
+          <a href="./event.html" class="create-button">
+            <i class="fas fa-plus"></i>Create
+          </a>
+        </div>
+      </div>
+    </div>
+    <nav class="header-right">
+      <a href="../../authentication-Francisco/html/my-event.html" class="nav-link">
+        <div class="icon-text-container">
+          <i class="fa-regular fa-calendar-plus"></i>
+          <span>My Event</span>
+        </div>
+      </a>
+
+      <!-- <a
+          href="../../../profile-settings-semih/html/settings.html"
+          class="nav-link"
+        >
+          <div class="icon-text-container">
+            <i class="fa-regular fa-bell"></i>
+            <span>Notification</span>
+          </div>
+        </a> -->
+      <div class="user-menu">
+        <button class="user-menu-button">
+          <img src="../../../media/impacto-logo.png" alt="User" id="userAvatar" />
+          <span id="userName">User Name</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="user-menu-dropdown">
+          <a href="../../authentication-Francisco/html/my-event.html">
+            <i class="fa-regular fa-calendar-plus"></i>My Event
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-user"></i>Profile Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fas fa-cog"></i>Account Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-circle-question"></i>Contact Support
+          </a>
+          <a href="#" id="logoutButton">
+            <i class="fas fa-sign-out-alt"></i>Log Out
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="eventTypeModal" class="modal">
+      <div class="modal-content">
+        <h2>Select Event Type</h2>
+        <div class="event-type-buttons">
+          <a href="./event.html" class="btn-outline-blue"> Event </a>
+          <a href="./petition.html" class="btn-outline-blue"> Petition </a>
+          <a href="./event-petition.html" class="btn-outline-blue">
+            Event & Petition
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <header class="mobile-header">
+    <div class="mobile-header-left">
+      <div class="icon-button back-button">
+        <i class="fa-solid fa-chevron-left"></i>
+      </div>
+    </div>
+    <div class="mobile-header-right">
+      <!-- <div class="icon-button">
+          <i class="fa-solid fa-ellipsis"></i>
+        </div> -->
+    </div>
+  </header>
+  <!-- <div id="userInfo"></div> -->
+  <main class="event-petition-detail">
+    <section class="event-header">
+      <div class="header-top">
+        <h1 id="eventTitle"></h1>
+        <div class="header-actions">
+          <div class="share-container">
+            <button id="shareButton" class="icon-button">
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </button>
+            <div id="shareOverlay" class="share-overlay">
+              <button class="share-icon email">
+                <i class="fa-solid fa-envelope"></i>
+              </button>
+              <button class="share-icon facebook">
+                <i class="fa-brands fa-facebook"></i>
+              </button>
+              <button class="share-icon copy-link">
+                <i class="fa-solid fa-link"></i>
+              </button>
+            </div>
+          </div>
+          <button id="favouriteButton" class="icon-button">
+            <i class="fa-solid fa-bookmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="organizer"></div>
+      <div class="main-image">
+        <img id="eventImage" src="" alt="Event Image" />
+      </div>
+      <h1 id="mobileEventTitle" class="mobile-event-title"></h1>
+      <div class="action-buttons">
+        <button id="supportButton" class="btn support btn-blue">
+          Support
+        </button>
+        <!-- <button id="attendButton" class="btn attend btn-blue">Attend</button> -->
+      </div>
+      <!-- <div class="live-button-container">
+          <button id="liveButton" class="btn live btn-blue">
+            <i class="fa-regular fa-comments"></i>Live Chat
+          </button>
+        </div> -->
+    </section>
+
+    <section class="event-details">
+      <h2>Overview</h2>
+      <div id="eventDescription"></div>
+    </section>
+
+    <section class="event-petition">
+      <h2>Petition</h2>
+      <p>
+        We would greatly appreciate it if you could support our petition.
+        Simply click the "Support" button above to show your support. Thank
+        you!
+      </p>
+      <div class="petition-info">
+        <div class="petition-datetime">
+          <i class="fas fa-calendar-alt"></i>
+          <div id="petitionStartDate" class="petition-start-date-time"></div>
+        </div>
+        <div class="petition-datetime">
+          <i class="fas fa-calendar-check"></i>
+          <div id="petitionEndDate" class="petition-end-date-time"></div>
+        </div>
+        <div class="petition-target-container">
+          <div class="petition-target-label">Supporters</div>
+          <div id="petitionTarget" class="petition-target"></div>
+          <div class="petition-progress">
+            <div class="petition-progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-organizer">
+      <h2>About the Organizer</h2>
+      <div class="organizer" id="eventOrganizer"></div>
+    </section>
+
+    <section class="event-categories">
+      <h2>Category</h2>
+      <div class="categories" id="eventCategories"></div>
+    </section>
+
+    <section class="event-comments">
+      <h2>Comments</h2>
+      <div class="comments-container" id="commentsSection">
+        <!-- Comments will be inserted here -->
+      </div>
+      <div class="comment-form" id="commentForm">
+        <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+        <button class="btn-blue" id="submitComment">Post Comment</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-mobile">
+      <nav>
+        <ul>
+          <li><a href="../../home/html/home.html" class="icon home-icon" target="_top"></a>HOME</li>
+          <li><a href="../../list-view/html/list-view.html" class="icon search-icon" target="_top"></a>SEARCH</li>
+          <li><a href="../../create-event-Naomi/html/event.html" class="icon create-icon" id="createBtn1"
+              target="_top"></a>CREATE</li>
+          <li><a href="../../authentication-Francisco/html/my-event.html" class="icon my_event-icon"
+              target="_top"></a>MY EVENT</li>
+          <li><a href="../../profile-settings-semih/html/settings.html" class="icon profile-icon"
+              target="_top"></a>PROFILE</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-desktop footer-desktop-hidden">
+      <div class="footer-body">
+        <div class="footer-left">
+          <div class="branding">
+            <img src="../../media/icons/Logo - BW.svg" alt="logo">
+            <p class="tagline">Raise your voice. Engage others. Amplify the effect.</br>Make our world a better place.
+            </p>
+          </div>
+          <div class="social-links">
+            <a href="#" target="_black" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_black" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_black" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="impacto">
+            <p>Impacto</p>
+            <nav>
+              <ul>
+                <li><a href="../../home/html/home.html" target="_top">HOME</a></li>
+                <li><a href="../../list-view/html/list-view.html" target="_top">SEARCH</a></li>
+                <li><a href="../../create-event-Naomi/html/event.html" id="createBtn2" target="_top">CREATE EVENT</a>
+                </li>
+                <li><a href="../../authentication-Francisco/html/my-event.html" target="_top">MY EVENT</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="support">
+            <p>Support</p>
+            <nav>
+              <ul>
+                <li><a href="../../profile-settings-semih/html/settings.html" target=".top">FAQs</a></li>
+                <li><a href="../../profile-settings-semih/html/settings.html" target=".top">Contact Us</a></li>
+                <li><a href="../../profile-settings-semih/html/settings.html" target=".top">Privacy Policy</a></li>
+                <li><a href="../../profile-settings-semih/html/settings.html" target=".top">Terms</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Impacto All Righs Reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

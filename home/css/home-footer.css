@@ -1,0 +1,10 @@
+@media screen and (min-width: 768px) {
+  .footer-desktop {
+    position: relative;
+    min-height: 335px;
+  }
+
+  .footer-desktop .footer-bottom p {
+    color: var(--MainGreen);
+  }
+}

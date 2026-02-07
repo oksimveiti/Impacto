@@ -1,0 +1,21 @@
+.notif-setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.setting-btn{
+  display: block;
+  margin: 30px auto;
+  width: 250px;
+}
+
+.setting-form{
+  margin-bottom: 30px;;
+}
+
+#username{
+  display:none;
+}
+

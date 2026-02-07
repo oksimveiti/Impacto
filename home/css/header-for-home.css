@@ -1,0 +1,369 @@
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* 既存のheader-leftのスタイルを修正 */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* サーチバーのスタイル */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 500px;
+  width: 100%;
+  height: 40px;
+}
+
+.search-inputs {
+  height: 40px;
+  display: flex;
+  flex: 1;
+  border: 1px solid var(--Contrast4);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.search-input-wrapper,
+.location-input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 0.2rem;
+  background: white;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  border-right: 1px solid var(--Contrast4);
+}
+
+.location-input-wrapper {
+  flex: 1;
+}
+
+.search-icon,
+.location-icon {
+  color: var(--MainContrast);
+  margin-right: 0.5rem;
+}
+
+.search-inputs input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.9rem;
+  color: var(--MainContrast);
+}
+
+.search-inputs input::placeholder {
+  color: var(--Contrast3);
+}
+
+.search-button {
+  background: var(--MainBlue);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.45rem 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background: var(--Blue2);
+}
+
+/* レスポンシブ対応を追加 */
+@media (max-width: 1024px) {
+  .search-container {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .search-container {
+    max-width: 100%;
+  }
+
+  header.main-header {
+    display: none !important;
+  }
+}
+
+.logo-link {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 0.2rem;
+}
+
+img .logo {
+  height: 60px !important;
+  width: auto;
+}
+
+.header-left h1 {
+  color: var(--MainBlue);
+  margin: 0;
+  /* font-size: 1.5rem; */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  color: var(--MainContrast);
+  font-size: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--MainBlue);
+}
+
+.nav-link i {
+  font-size: 1.2rem;
+}
+
+/* ユーザーメニュー */
+.user-menu {
+  position: relative;
+}
+
+.user-menu-button {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1px solid var(--MainContrast);
+  border-radius: 50px;
+  cursor: pointer;
+  /* padding: 0.5rem; */
+  color: var(--MainContrast);
+}
+
+#userAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+.user-menu-dropdown.active {
+  display: block;
+}
+
+.user-menu-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1rem;
+  color: var(--MainContrast);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.user-menu-dropdown a:hover {
+  background-color: var(--Blue4);
+  color: var(--MainBlue);
+}
+
+.user-menu-dropdown i {
+  width: 20px;
+  text-align: center;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+
+  header.mobile-only {
+    width: 100%;
+    height: 150px;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  header.mobile-only #welcome-area {
+    margin: 16px;
+  }
+
+  header.mobile-only #welcome-home {
+    margin: 0;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  #userName-mobile {
+    margin: 0;
+    color: var(--MainBlue);
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  .main-header {
+    padding: 0 1rem;
+  }
+
+  .nav-link span {
+    display: none;
+  }
+
+  .header-right {
+    gap: 1rem;
+  }
+
+  #userName {
+    display: none;
+  }
+}
+
+/* ヘッダー下のコンテンツにマージンを追加 */
+body {
+  padding-top: 90px;
+}
+
+/* Create ボタンのスタイル */
+.create-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--MainBlue);
+  color: white;
+  padding: 0 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-left: 1rem;
+}
+
+.create-button:hover {
+  background-color: var(--Blue2);
+}
+
+.create-button i {
+  font-size: 0.9rem;
+}
+
+/* レスポンシブ対応を修正 */
+@media (max-width: 1024px) {
+  .search-container {
+    max-width: 500px;
+  }
+
+  .create-button {
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    display: none;
+  }
+
+  .search-container-list-map {
+    display: block;
+  }
+
+  .create-button {
+    display: none;
+  }
+}
+
+/* モーダルのスタイル */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  color: var(--MainContrast);
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.event-type-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.event-type-buttons .btn-outline-blue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  min-width: 120px;
+  text-decoration: none;
+  border-radius: 8px;
+}

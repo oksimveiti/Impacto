@@ -1,0 +1,184 @@
+header {
+  border-bottom: 1px solid var(--Contrast4);
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header starts */
+
+header {
+  padding: 0 2rem;
+}
+
+.logo-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container h1 {
+  color: var(--MainBlue);
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* header ends */
+
+main {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+main h1 {
+  text-align: center;
+}
+
+#signUpForm {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.sign-up-name-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 490px;
+}
+
+input::placeholder {
+  color: var(--Contrast3);
+  font-size: 1.25rem;
+}
+
+input {
+  width: 490px;
+  height: 45px;
+
+  background-color: var(--MainBase);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.25rem;
+}
+
+#formName,
+#formSurname {
+  width: 236px;
+  height: 45px;
+
+  background-color: var(--MainBase);
+  border: none;
+  border-radius: 5%;
+  font-size: 1.25rem;
+}
+
+#formSurname {
+  margin-left: 10px;
+}
+
+#continueBtn {
+  margin-top: 120px;
+  width: 122px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: var(--MainBlue);
+  border: none;
+  text-decoration: none;
+  color: var(--MainBase);
+}
+
+@media screen and (max-width: 767px) {
+  .desktop-only {
+    display: none;
+  }
+
+  header {
+    padding: 0;
+  }
+
+  .mobile-header-container {
+    background-color: var(--MainBlue);
+
+    padding: 10vh 0 3vh 30px;
+  }
+
+  .lt-sign-up-container {
+    display: flex;
+    flex-flow: row wrap;
+
+    align-items: center;
+  }
+
+  .lt-sign-up-container a,
+  .mobile-sign-up-title {
+    color: var(--MainBase);
+    font-size: 2rem;
+  }
+
+  .mobile-sign-up-title {
+    flex-grow: 1;
+
+    text-align: center;
+  }
+
+  .logo-container {
+    margin: 5vh 0;
+
+    flex-flow: column nowrap;
+    gap: unset;
+  }
+
+  .logo {
+    height: 80px;
+  }
+
+  .logo-text {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  .sign-up-name-container {
+    justify-content: center;
+  }
+
+  #formName,
+  #formSurname {
+    max-width: 236px;
+    width: 24.5vw;
+    min-width: 160px;
+  }
+
+  input {
+    max-width: 490px;
+    width: 50vw;
+    min-width: 338px;
+  }
+
+  #continueBtn {
+    margin-top: 60px;
+
+    max-width: 490px;
+    width: 50vw;
+    min-width: 338px;
+
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}

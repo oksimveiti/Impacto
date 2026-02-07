@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="module" src="../../config/config.js"></script>
+  <script type="module" src="../js/backend/my-event-back.js"></script>
+  <link rel="stylesheet" href="../../common-css.css">
+  <link rel="stylesheet" href="../css/my-event-style.css">
+  <link rel="stylesheet" href="../../header/header.css">
+  <script type="module" src="../../header/header.js"></script>
+  <!-- live chat -->
+  <link rel="stylesheet" href="../../bottom-sheet/css/bottom-sheet.css">
+  <script type="module" src="../../bottom-sheet/js/frontend/live-chat.js"></script>
+  <script src="../js/frontend/my-event-footer.js"></script>
+  <title>My Event</title>
+</head>
+
+<body>
+
+  <!-- New Header -->
+
+  <header class="main-header">
+    <div class="header-left">
+      <a href="../../home/html/home.html" class="logo-link">
+        <img src="../../media/icons/Logo - CL.svg" class="logo" style="height: 60px;" />
+      </a>
+      </a>
+
+      <div class="search-container">
+        <div class="display-none">
+          <div class="search-inputs">
+            <div class="search-input-wrapper">
+              <input type="text" placeholder="Search events..." id="eventSearch" />
+            </div>
+            <div class="location-input-wrapper">
+              <i class="fas fa-map-marker-alt location-icon"></i>
+              <input type="text" placeholder="Location..." id="locationSearch" />
+              <button class="search-button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <a href="./event.html" class="create-button">
+            <i class="fas fa-plus"></i>Create
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <nav class="header-right">
+      <div class="display-none">
+        <a href="../../authentication-Francisco/html/my-event.html" class="nav-link">
+          <div class="icon-text-container">
+            <i class="fa-regular fa-calendar-plus"></i>
+            <span>My Event</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="display-none">
+        <a href="../../../profile-settings-semih/html/settings.html" class="nav-link">
+          <div class="icon-text-container">
+            <i class="fa-regular fa-bell"></i>
+            <span>Notification</span>
+          </div>
+        </a>
+      </div>
+      <div class="user-menu">
+        <button class="user-menu-button">
+          <img src="../../../media/impacto-logo.png" alt="User" id="userAvatar" />
+          <span id="userName">User Name</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="user-menu-dropdown">
+          <a href="../../authentication-Francisco/html/my-event.html">
+            <i class="fa-regular fa-calendar-plus"></i>My Event
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-user"></i>Profile Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fas fa-cog"></i>Account Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-circle-question"></i>Contact Support
+          </a>
+          <a href="#" id="logoutButton">
+            <i class="fas fa-sign-out-alt"></i>Log Out
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="eventTypeModal" class="modal">
+      <div class="modal-content">
+        <h2>Select Event Type</h2>
+        <div class="event-type-buttons">
+          <a href="../../create-event-Naomi/html/event.html" class="btn-outline-blue"> Event </a>
+          <a href="../../create-event-Naomi/html/petition.html" class="btn-outline-blue"> Petition </a>
+          <a href="../../create-event-Naomi/html/event-petition.html" class="btn-outline-blue">
+            Event & Petition
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <header class="mobile-only mobile-header-container">
+    <h1 class="mobile-page-title">
+      My Event
+    </h1>
+  </header>
+
+  <main>
+
+
+    <h1 id="eventTitle" class="desktop-only">Events</h1>
+    <section class="event-categories">
+      <ul id="ul1Category" class="event-categories-selected">
+        <li id="hosting" class="selected-li"><span>Hosting (</span><span id="hostingNumber"></span><span>)</span></li>
+        <li id="drafts"><span>Drafts (</span><span id="draftsNumber"></span><span>)</span></li>
+      </ul>
+
+      <ul id="ul2Category" class="event-categories-not-selected">
+        <li id="attending"><span>Attending (</span><span id="attendingNumber"></span><span>)</span></li>
+        <li id="supporting"><span>Supporting (</span><span id="supportingNumber"></span><span>)</span></li>
+        <li id="saved"><span>Bookmark (</span><span id="savedNumber"></span><span>)</span></li>
+      </ul>
+    </section>
+
+
+
+    <table id="myEventTable">
+      <thead class="desktop-only">
+        <tr>
+          <th class="event-column">Event</th>
+          <th class="image-column"><!-- for event featured image --></th>
+          <th class="details-column"></th>
+          <th class="support-column">Support Count</th>
+          <th class="participant-column">
+            <p class="participant-count">Participant Count</p>
+          </th>
+          <th class="status-column">Status</th>
+          <th class="ellipsis-column"><!-- for more (3 horitontal dots) --></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- I can't tell how many rows are there going to be, so use js to generate them -->
+      </tbody>
+    </table>
+
+    <!-- hide them -->
+    <div class='ellipsis-ul ellipsis-ul-hosting navListStyle display-none'>
+      <ul>
+        <li id="hostingMenuView">View</li>
+        <li id="hostingMenuEdit">Edit</li>
+        <li id="hostingMenuCopyLink">Copy Link</li>
+        <li id="hostingUnpublish">Unpublish</li>
+      </ul>
+    </div>
+
+    <div class='ellipsis-ul ellipsis-ul-attending display-none'>
+      <ul>
+        <li id="attendingMenuView">View</li>
+        <li id="attendingMenuCopyLink">Copy Link</li>
+        <li id="attendingMenuAddToCalendar">Add to Calendar</li>
+        <li id="attendingMenuCancelMyAttendance">Cancel my attendance</li>
+      </ul>
+    </div>
+
+    <div class='ellipsis-ul ellipsis-ul-supporting display-none'>
+      <ul>
+        <li id="supportingMenuView">View</li>
+        <li id="supportingMenuWithdraw">Withdraw Support</li>
+      </ul>
+    </div>
+
+    <div class='ellipsis-ul ellipsis-ul-bookmark display-none'>
+      <ul>
+        <li id="bookmarkMenuView">View</li>
+        <li id="bookmarkMenuUnsave">Unsave</li>
+      </ul>
+    </div>
+
+    <div class='ellipsis-ul ellipsis-ul-drafts display-none'>
+      <ul>
+        <li id="draftsMenuView">View</li>
+        <li id="draftsMenuPublish">Publish</li>
+        <li id="draftsMenuDelete">Delete</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-mobile">
+      <nav>
+        <ul>
+          <li><a href="../../home/html/home.html" class="icon home-icon" target="_top"></a>HOME</li>
+          <li><a href="../../list-view/html/list-view.html" class="icon search-icon" target="_top"></a>SEARCH</li>
+          <li><a href="../../create-event-Naomi/html/event.html" class="icon create-icon" id="createBtn1"
+              target="_top"></a>CREATE</li>
+          <li><a href="#" class="icon my_event-icon" target="_top"></a>MY
+            EVENT</li>
+          <li><a href="../../profile-settings-semih/html/settings.html" class="icon profile-icon"
+              target="_top"></a>PROFILE
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-desktop footer-desktop-hidden">
+      <div class="footer-body">
+        <div class="footer-left">
+          <div class="branding">
+            <img src="../../media/logo/Logo-BW.svg" alt="logo">
+            <p class="tagline">Raise your voice. Engage others. Amplify the effect.</br>Make our world a better place.
+            </p>
+          </div>
+          <div class="social-links">
+            <a href="#" target="_black" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_black" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_black" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="impacto">
+            <p>Impacto</p>
+            <nav>
+              <ul>
+                <li><a href="../../home/html/home.html" target="_top">HOME</a></li>
+                <li><a href="../../list-view/html/list-view.html" target="_top">SEARCH</a></li>
+                <li><a href="../../create-event-Naomi/html/event.html" id="createBtn2" target="_top">CREATE EVENT</a>
+                </li>
+                <li><a href="#" target="_top">MY EVENT</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="support">
+            <p>Support</p>
+            <nav>
+              <ul>
+                <li><a href="../profile-settings-semih/html/settings.html" target=".top">FAQs</a></li>
+                <li><a href="../profile-settings-semih/html/settings.html" target=".top">Contact Us</a></li>
+                <li><a href="../profile-settings-semih/html/settings.html" target=".top">Privacy Policy</a></li>
+                <li><a href="../profile-settings-semih/html/settings.html" target=".top">Terms</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Impacto All Righs Reserved</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

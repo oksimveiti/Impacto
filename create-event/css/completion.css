@@ -1,0 +1,114 @@
+.completion-content {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.completion-content h1 {
+  color: var(--MainBlue);
+  margin-bottom: 20px;
+}
+
+.completion-content p {
+  color: var(--MainContrast);
+  margin-bottom: 40px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-blue {
+  height: 40px;
+}
+/* ============================================ */
+/* Progress Bar */
+/* ============================================ */
+.progress-bar {
+  margin-top: 100px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 30px auto;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* バーのライン */
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 120px;
+  right: 120px;
+  height: 2px;
+  background-color: var(--MainBlue);
+  z-index: 1;
+}
+
+/* ステップ */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  text-align: center;
+}
+
+.step-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--MainBlue);
+  background-color: white;
+  margin-bottom: 8px;
+}
+
+.step.active .step-circle,
+.step.completed .step-circle {
+  background-color: var(--MainBlue);
+  border-color: var(--MainBlue);
+}
+
+.step.completed .step-circle {
+  background-color: var(--MainBlue);
+  border-color: var(--MainBlue);
+}
+
+.step-label {
+  font-size: 14px;
+  color: var(--Contrast3);
+  width: 100%;
+  text-align: center;
+}
+
+.step.active .step-label {
+  color: var(--MainBlue);
+  font-weight: 500;
+}
+
+/* プログレスバーのレスポンシブ対応 */
+@media screen and (max-width: 600px) {
+  .progress-bar {
+    padding: 0 10px;
+  }
+
+  .progress-bar::before {
+    left: 60px;
+    right: 60px;
+  }
+
+  .step-label {
+    font-size: 12px;
+  }
+}
+
+/* ============================================ */
+/* Progress Bar Ends Here*/
+/* ============================================ */

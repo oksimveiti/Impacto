@@ -1,0 +1,625 @@
+/* Base styles */
+:root {
+  --primary-color: #3f51b5;
+  --primary-dark: #303f9f;
+  --primary-light: #c5cae9;
+  --accent-color: #536dfe;
+  --text-color: #212121;
+  --secondary-text: #757575;
+  --divider-color: #bdbdbd;
+  --error-color: #f44336;
+  --success-color: #4caf50;
+  --background-color: #f5f5f7;
+  --card-color: #ffffff;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--card-color);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1{
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  font-size: 2rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#interest-label {
+    text-align: center;
+    font-weight: bold;
+}
+
+legend {
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+header p {
+  color: var(--secondary-text);
+  font-size: 1rem;
+}
+
+/* Logo and Nav Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img,
+.navbar .logo svg {
+  height: 32px;
+  margin-right: 10px;
+}
+
+.navbar .logo span {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Form Styles */
+form {
+  width: 100%;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+legend {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--primary-light);
+  width: 100%;
+}
+
+.field-group {
+  margin-bottom: 20px;
+}
+
+.field-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--divider-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.hint-text {
+  color: var(--secondary-text);
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Profile Upload */
+.profile-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profilePreview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid var(--primary-light);
+}
+
+/* Hobbies */
+#hobbiesContainer {
+  margin-top: 10px;
+}
+
+.hobby-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.hobby-input input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+#hobbiesDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.hobby-tag {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.hobby-tag button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  color: var(--primary-dark);
+}
+
+/* Event Preferences */
+#eventPreferences {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+#eventPreferences div {
+  display: flex;
+  align-items: center;
+}
+
+#eventPreferences input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Interest items styling */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .interest-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .interest-item:hover {
+    border-color: #3f51b5;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(63, 81, 181, 0.1);
+  }
+  
+  /* Interest icon container */
+  .interest-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  /* Style for the images inside the icon container */
+  .interest-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hide hover and selected icons by default */
+  .interest-item .icon-hover,
+  .interest-item .icon-selected {
+    display: none;
+  }
+  
+  /* Show hover icon on hover (but only when not selected) */
+  .interest-item:not(.selected):hover .icon-default {
+    display: none;
+  }
+  
+  .interest-item:not(.selected):hover .icon-hover {
+    display: block;
+  }
+  
+  /* For selected state (regardless of hover) */
+  .interest-item.selected {
+    background-color: #f5f5f7;
+    border-color: #3f51b5;
+  }
+  
+  .interest-item.selected .icon-default,
+  .interest-item.selected .icon-hover {
+    display: none;
+  }
+  
+  .interest-item.selected .icon-selected {
+    display: block;
+  }
+  
+  /* Style for the label */
+  .interest-label {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #212121;
+    transition: all 0.3s ease;
+  }
+  
+  .interest-item.selected .interest-label {
+    color: #3f51b5;
+    font-weight: 600;
+  }
+
+/* Location Setup */
+#gpsLocation {
+  margin-bottom: 15px;
+}
+
+#gpsStatus {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+#manualLocation {
+  margin-top: 10px;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-hobby {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.form-actions button,
+.btn,
+button[type="button"] {
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+button[id="goBack"],
+button[id="reviewProfile"] {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+button[id="goBack"]:hover,
+button[id="reviewProfile"]:hover {
+  background-color: var(--primary-light);
+}
+
+#getLocation {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+}
+
+/* Error Display */
+.error-container {
+  background-color: #ffebee;
+  border-left: 4px solid var(--error-color);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* Preference Setup and Profile Summary Styles */
+.preference-setup {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  padding: 30px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: var(--secondary-text);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f7;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.category-icon svg {
+  width: 32px;
+  height: 32px;
+  color: var(--primary-color);
+}
+
+.category-label {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.category-item:hover .category-icon {
+  background-color: var(--primary-light);
+  transform: scale(1.05);
+}
+
+.category-item.selected .category-icon {
+  background-color: var(--primary-light);
+  border: 2px solid var(--primary-color);
+}
+
+.location-section {
+  margin-top: 40px;
+}
+
+.location-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.location-section p {
+  color: var(--secondary-text);
+  margin-bottom: 20px;
+}
+
+.location-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.location-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--divider-color);
+  border-radius: var(--border-radius);
+}
+
+.location-input button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.use-current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: var(--primary-color);
+  cursor: pointer;
+  margin: 10px 0 20px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-skip {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 12px 40px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.btn-next {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+/* Profile Summary Styles */
+#profilePreviewContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  padding: 30px;
+}
+
+#profilePreviewContainer h2 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--divider-color);
+  padding-bottom: 5px;
+}
+
+#profilePreviewContainer .field-group {
+  margin-bottom: 25px;
+}
+
+#previewProfilePicture {
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-light);
+}
+
+#previewHobbies {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#previewHobbies li {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Custom Elements for the Preference/Profile Setup Screen */
+body > header {
+  background-color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.impacto-logo {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.impacto-logo svg {
+  height: 24px;
+  margin-right: 8px;
+}

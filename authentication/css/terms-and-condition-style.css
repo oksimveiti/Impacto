@@ -1,0 +1,79 @@
+header {
+  border-bottom: 1px solid var(--Contrast4);
+  padding: 0 2rem;
+}
+
+body {
+  margin: 0;
+}
+
+/* header starts */
+
+header h1 {
+  color: var(--MainBlue);
+}
+
+.logo-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container h1 {
+  color: var(--MainBlue);
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+main {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.terms-container {
+  margin-top: 45px;
+  height: 612px;
+  overflow-y: scroll;
+}
+
+.terms-container h1 {
+  text-align: center;
+}
+
+.terms-container h3 {
+  margin-top: 60px;
+}
+
+.terms-container ul li {
+  line-height: 1.5;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  width: 122px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: var(--MainBlue);
+  border: none;
+  text-decoration: none;
+  color: var(--MainBase);
+  margin: auto;
+}

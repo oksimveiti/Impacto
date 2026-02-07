@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You for Your Support!</title>
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!-- you-are-in css -->
+    <link rel="stylesheet" href="../css/you-are-in-petition.css" />
+    <link rel="stylesheet" href="../css/completion.css" />
+    <link rel="stylesheet" href="../../common-css.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;700&family=Hind:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="confirmation-container">
+      <h1>Thank You for Your Support!</h1>
+      <div class="petition-details">
+        <h2 id="petitionTitle"></h2>
+        <div class="datetime">
+          <i class="fas fa-calendar"></i>
+          <div>
+            <p>Start: <span id="startDateTime"></span></p>
+            <p>End: <span id="endDateTime"></span></p>
+          </div>
+        </div>
+        <div class="target">
+          <i class="fas fa-users"></i>
+          <p>Target: <span id="petitionTarget"></span> supporters</p>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button id="addToCalendarBtn" class="btn-outline-blue">
+          <i class="fas fa-calendar-plus"></i>
+          Add to Calendar
+        </button>
+        <button id="shareButton" class="btn-blue">
+          <i class="fas fa-share-alt"></i>
+          Share
+        </button>
+      </div>
+      <div id="shareOverlay" class="share-overlay">
+        <button class="share-icon email">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+        <button class="share-icon facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </button>
+        <button class="share-icon copy-link">
+          <i class="fa-solid fa-link"></i>
+        </button>
+      </div>
+    </main>
+    <script
+      type="module"
+      src="../js/js/frontend/you-are-in-petition.js"
+    ></script>
+    <iframe src="/footer/footer.html" width="100%" height="300px" frameborder="0"></iframe>
+  </body>
+</html>

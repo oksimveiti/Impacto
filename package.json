@@ -1,0 +1,28 @@
+{
+  "name": "impacto",
+  "version": "1.0.0",
+  "description": "comments or resources can be placed here.",
+  "homepage": "https://github.com/Francisco1116/Impacto#readme",
+  "bugs": {
+    "url": "https://github.com/Francisco1116/Impacto/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Francisco1116/Impacto.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "firebase": "^11.3.0",
+    "firebase-admin": "^13.1.0",
+    "firebase-functions": "^6.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.22.0"
+  }
+}

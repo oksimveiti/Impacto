@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Preview | Impecto</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- live chat -->
+  <link rel="stylesheet" href="../../bottom-sheet/css/bottom-sheet.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="header-left">
+      <a href="../../../home/html/home.html" class="logo-link">
+        <img src="../../media/logo.png" alt="Impact Logo" class="logo" />
+        <h1>Impacto</h1>
+      </a>
+    </div>
+  </header>
+
+  <section id="profilePreviewContainer">
+    <h1>Preview Your Profile</h1>
+    <!-- Profile Picture -->
+    <div class="field-group">
+      <h2>Profile Picture</h2>
+      <img id="previewProfilePicture" alt="Profile pic"
+        style="display: none; width: 150px; height: 150px; border-radius: 50%" />
+    </div>
+
+    <!-- Bio -->
+    <div class="field-group">
+      <h2>Bio</h2>
+      <p id="previewBio">No bio provided.</p>
+    </div>
+
+    <!-- Gender -->
+    <div class="field-group">
+      <h2>Gender</h2>
+      <p id="previewGender">Not specified</p>
+    </div>
+
+    <!-- Hobbies -->
+    <div class="field-group">
+      <h2>Interests</h2>
+      <ul id="previewHobbies">
+        <li>No interest added.</li>
+      </ul>
+    </div>
+
+    <!-- Notification Preferences -->
+    <div class="field-group">
+      <h2>Notification Preferences</h2>
+      <p id="previewNotifications">Not specified</p>
+    </div>
+
+    <!-- Privacy Settings -->
+    <div class="field-group">
+      <h2>Privacy Level</h2>
+      <p id="previewPrivacy">Not specified</p>
+    </div>
+
+    <!-- Location -->
+    <div class="field-group">
+      <h2>Location</h2>
+      <p id="previewLocation">Not specified</p>
+    </div>
+
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <button type="button" id="goBack">Go Back & Edit</button>
+      <button type="button" id="finalizeProfile">Finalize Profile</button>
+    </div>
+  </section>
+
+  <!-- <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    import { getStorage } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
+    import {
+      getAuth,
+      onAuthStateChanged,
+    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+    window.firebase = {
+      initializeApp,
+      getFirestore,
+      getStorage,
+      getAuth,
+      onAuthStateChanged,
+    };
+  </script> -->
+
+  <script type="module" src="../js/frontend/profileSummary.js" defer></script>
+  <script type="module" src="../../config/config.js"></script>
+  <script type="module" src="../../bottom-sheet/js/frontend/live-chat.js"></script>
+</body>
+
+</html>

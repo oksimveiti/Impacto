@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings | Impecto</title>
+  <link rel="stylesheet" href="../css/mobile.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../../account-settings/css/account-settings.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JNKKKK/MoreToggles.css@1.0.0/output/moretoggles.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/profile-setting-button.css">
+</head>
+
+<body>
+  <header class="mobile-header">
+    <div class="mobile-header-left">
+      <div class="icon-button back-button">
+        <i class="fa-solid fa-chevron-left"></i>
+      </div>
+    </div>
+    <div class="mobile-header-right">
+      <!-- <div class="icon-button dots-button">
+          <i class="fa-solid fa-ellipsis"></i>
+        </div> -->
+    </div>
+  </header>
+
+  <header class="navbar">
+    <div class="header-left">
+      <a href="../../../home/html/home.html" class="logo-link">
+        <img src="../../media/icons/Logo - CL.svg" class="logo" style="height: 60px;" />
+      </a>
+    </div>
+    <div class="user-menu">
+      <div class="user-profile">
+        <img src="" alt="Profile" class="headerProfilePic" style="width: 30px; height: 30px; border-radius: 50%" />
+        <span class="headerUsername">User</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Sidebar Navigation -->
+      <div class="sidebar">
+        <div class="mobile-sidebar-title">Profile Setting</div>
+        <div class="nav-item nav-link mobile-profile-button" data-section="profile">
+          <span class="profile-setting-text">Profile Setting</span>
+          <div class="user-info">
+            <img src="" alt="Profile" class="headerProfilePic" style="width: 30px; height: 30px; border-radius: 50%" />
+            <span class="headerUsername">User</span>
+          </div>
+        </div>
+        <div class="nav-item nav-header" data-section="account">
+          <span class="nav-icon">
+            <i class="fas fa-cog"></i>
+          </span> Account Setting
+          <span class="dropdown-arrow">▼</span>
+        </div>
+        <div class="submenu" id="accountSubmenu">
+          <div class="nav-item nav-link" data-section="preference">
+            Preference Setting
+          </div>
+          <div id="passwordUpdate" class="nav-item nav-link" data-section="password">
+            Change Password
+          </div>
+        </div>
+        <div class="nav-item nav-header" data-section="support">
+          <span class="nav-icon">
+            <i class="fas fa-question-circle"></i>
+          </span> Contact Support
+          <span class="dropdown-arrow">▼</span>
+        </div>
+        <div class="submenu" id="supportSubmenu">
+          <div class="nav-item nav-link" data-section="faqs">FAQs</div>
+          <div class="nav-item nav-link" data-section="contact">Contact Impacto</div>
+          <div class="nav-item nav-link" data-section="privacy">Privacy Policy</div>
+          <div class="nav-item nav-link" data-section="terms">Terms of Use</div>
+        </div>
+      </div>
+      <!-- Main Content Area -->
+      <div class="content">
+        <div class="settings-container">
+          <!-- This is where we'll load different settings sections -->
+          <div id="settingsContent">
+            <!-- Default content or loading message -->
+            <h2>Loading settings...</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- added event modal-->
+  <div id="eventTypeModal" class="modal">
+    <div class="modal-content">
+      <h2>Select Event Type</h2>
+      <div class="event-type-buttons">
+        <a href="../../create-event-Naomi/html/event.html" class="btn-outline-blue">
+          Event
+        </a>
+        <a href="../../create-event-Naomi/html/petition.html" class="btn-outline-blue">
+          Petition
+        </a>
+        <a href="../../create-event-Naomi/html/event-petition.html" class="btn-outline-blue">
+          Event & Petition
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-mobile">
+    <nav>
+      <ul>
+        <li>
+          <a href="../../home/html/home.html" class="footer-link">
+            <span class="icon home-icon"></span>
+            <span class="label">HOME</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../list-view/html/list-view.html" class="footer-link">
+            <span class="icon search-icon"></span>
+            <span class="label">SEARCH</span>
+          </a>
+        </li>
+        <li id="createBtn2">
+          <a href="#" class="footer-link">
+            <span class="icon create-icon"></span>
+            <span class="label">CREATE</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../authentication-Francisco/html/my-event.html" class="footer-link">
+            <span class="icon my_event-icon"></span>
+            <span class="label">MY EVENT</span>
+          </a>
+        </li>
+        <li>
+          <a href="./settings.html" class="footer-link">
+            <span class="icon profile-icon"></span>
+            <span class="label">PROFILE</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    import { getStorage } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
+    window.firebase = { initializeApp, getFirestore, getStorage };
+  </script>
+  <script type="module" src="../js/settings.js"></script>
+  <script type="module" src="../js/frontend/settings-ui.js"></script>
+  <!-- <script type="module" src="../../account-settings/js/frontend/account-settings.js"></script> -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjD5D9MYiLHerfbG8pboypbl9SwCOqQc0&libraries=places"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const createBtn2 = document.getElementById("createBtn2");
+      const modal = document.getElementById("eventTypeModal");
+      createBtn2.addEventListener("click", function (e) {
+        modal.style.display = "flex";
+      });
+
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.style.display === "flex") {
+          modal.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

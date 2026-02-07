@@ -1,0 +1,37 @@
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.event-petition-container {
+  margin-bottom: 2rem;
+  border: 1px solid var(--Contrast3);
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.event-petition-container .form-group {
+  border: none !important;
+  padding: 10px !important;
+  transition: none !important;
+}
+
+form .form-group {
+  margin-bottom: 0 !important;
+}
+
+.event-petition-container.image-box {
+  padding: 0px !important;
+}
+
+.image-upload {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.petition-datetime-inputs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px;
+}

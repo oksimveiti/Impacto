@@ -1,0 +1,77 @@
+<!-- Please use go live to this file or the authenticaiton will be blocked -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
+  <script src="../js/backend/auth-log-in-back.js" type="module"></script>
+  <!-- <script src="../js/frontend/authentication-front.js" defer></script> -->
+  <link rel="stylesheet" href="../../common-css.css">
+  <link rel="stylesheet" href="../css/log-in-style.css">
+  <title>Impacto-login</title>
+</head>
+
+<body>
+
+  <header>
+    <a class="desktop-only" href="../../index.html">
+      <div class="logo-container">
+
+        <img src="../../media/logo.png" alt="impacto-logo" class="logo">
+        <h1>impacto</h1>
+      </div>
+    </a>
+
+    <div class="mobile-header-container mobile-only">
+      <div class="lt-sign-up-container">
+        <a href="../../index.html">&lt;</a>
+        <span class="mobile-sign-up-title">Log in</span>
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+
+    <h1 class="desktop-only">
+      login
+    </h1>
+
+    <div class="logo-container mobile-only">
+
+      <img src="../../media/logo.png" alt="impacto-logo" class="logo">
+      <h1 class="logo-text">impacto</h1>
+    </div>
+
+    <form id="logInForm">
+
+      <label for="email"></label>
+      <input type="email" name="email" id="formEmail" placeholder="Email" required>
+
+      <label for="password"></label>
+      <input type="password" name="password" id="formPassword" placeholder="Password" required>
+
+      <button id="logInBtn">
+        login
+      </button>
+      <!-- <button id="socialLogInBtn">
+        Social Log in
+      </button> -->
+      <!-- <button id="signUpBtn">
+        <a href="sign-up.html">Sign up a New Account</a>
+      </button> -->
+      <!-- <button id="logOutBtn">
+        Log out
+      </button> -->
+    </form>
+  </main>
+
+  <footer>
+    <!-- for footer -->
+  </footer>
+
+</body>
+
+</html>

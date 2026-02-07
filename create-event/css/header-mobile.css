@@ -1,0 +1,57 @@
+/* モバイルヘッダーのスタイル */
+.mobile-header {
+  display: none; /* デフォルトでは非表示 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* モバイルヘッダーの高さ */
+  background: var(--MainBase);
+  padding: 0 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  justify-content: space-between; /* 左右に分ける */
+  align-items: center;
+}
+
+.mobile-header-left,
+.mobile-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--MainContrast);
+}
+
+.icon-button i {
+  font-size: 1.2rem;
+}
+
+.text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--MainContrast);
+}
+
+/* モバイル表示時の切り替え */
+@media screen and (max-width: 768px) {
+  header.main-header {
+    display: none !important;
+  }
+
+  .mobile-header {
+    display: flex !important;
+  }
+
+  /* モバイルヘッダーの下のコンテンツにマージンを追加 */
+  body {
+    padding-top: 60px; /* モバイルヘッダーの高さに合わせる */
+  }
+}

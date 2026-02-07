@@ -1,0 +1,141 @@
+/* For You, RecentlyViewed */
+
+header.mobile-only {
+    display: none;
+  }
+
+  main {
+    margin-top: 100px;
+  }
+
+  #delete-history {
+    all: unset;
+    color: var(--MainBlue);
+  }
+  
+  #recently-viewed-section-heading {
+    display: flex;
+    justify-content: space-between;
+  }
+.card-area-div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  header.mobile-only {
+    display: flex;
+    height: 110px;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    padding: 10px;
+  }
+
+  header.mobile-only button {
+    all: unset;
+    cursor: pointer;
+    z-index: 10;
+
+  }
+
+  header.mobile-only h2 {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 24px;
+  }
+
+  .card-area-div {
+    padding: 5px;
+  }
+
+  .section-headings {
+    display: none;
+  }
+
+  .event-cards {
+    display: flex;
+    padding: 4px;
+    flex: 0 0 160px;
+    flex: row nowrap;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--card-info-color);
+    border-radius: var(--web-small-radius);
+  }
+
+  .event-cards img {
+    display: block;
+    width: 30%;
+    min-width: 120px;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .event-cards:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .event-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--web-small-radius);
+  }
+
+  .event-info {
+    padding: 4px 4px;
+  }
+
+  .category-div {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    background-color: var(--MainGreen);
+    border-radius: 5px;
+    object-fit: fill;
+  }
+
+  .event-titles {
+    color: var(--MainContrast);
+  }
+
+  .event-period {
+    margin: 4px 0;
+    display: block;
+    font-weight: bold;
+    color: var(--Contrast1);
+  }
+
+  .event-locations {
+    margin: 4px 0;
+    display: block;
+    color: var(--Contrast1);
+  }
+
+  .event-participants {
+    margin: 4px 0;
+    display: block;
+    color: var(--MainBlue);
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  #for-you-section .card-area-div,
+  #recently-viewed-section .card-area-div {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+  }
+}

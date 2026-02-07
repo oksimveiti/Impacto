@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Todo: I might need to discuss how to search the event  -->
+  <link rel="stylesheet" href="../css/offline-style.css">
+  <link rel="stylesheet" href="../../offline-style.css">
+  <link rel="stylesheet" href="../../../offline-style.css">
+  <link rel="manifest" href="../../manifest.json">
+  <link rel="stylesheet" href="../../common-css.css">
+  <script src="../js/frontend/offline.js" defer></script>
+  <title>Offline page</title>
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="../../media/logo.png" alt="impacto-logo" class="logo">
+      <h1>impacto</h1>
+    </div>
+
+    <!-- <div class="search-bar-container">
+      <input type="text" class="search-input" placeholder="Search events">
+      <input type="text" class="location-input" placeholder="Vancouver">
+      <button class="search-button" onclick="performSearch()"><span class="fas fa-magnifying-glass"></span><span
+          class="visually-hidden">search</span></button>
+    </div> -->
+
+    <div class="signUp-logIn-container">
+      <button class="sign-up"><a href="./authentication-Francisco/html/sign-up.html">Sign
+          up</a></button>
+      <button class="log-in"><a href="./authentication-Francisco/html/log-in.html">Log
+          in</a></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="offline-container">
+      <img src="../../media/icons/offline-dino.svg" class="offline-image">
+      <h1 class="offline-title">Oops! You're offline.</h1>
+      <h2 class="offline-text">Please check your internect connection.</h2>
+    </div>
+  </main>
+
+  <footer>
+
+    <div class="footer-logo-impacto-container">
+      <img src="../../media/logo/Logo-BW.svg" alt="impacto-logo" class="logo">
+      <!-- <h2>impacto</h2> -->
+    </div>
+
+    <p class="footer-slogan">Tep to raise. Act to impact.</p>
+
+    <div class="social-media-logos">
+      <i class="fab fa-facebook fa-2x"></i>
+      <i class="fab fa-instagram fa-2x"></i>
+      <i class="fab fa-x-twitter fa-2x"></i>
+    </div>
+
+    <div class="copyright-container">
+      <p>© 2025 Impacto All Rights Reserved</p>
+    </div>
+  </footer>
+  <!-- 
+  <script>
+    window.addEventListener("online", function () {
+      window.location.href = "../../index.html";
+    });
+  </script> -->
+</body>
+
+</html>

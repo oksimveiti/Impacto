@@ -1,0 +1,113 @@
+:root {
+  /* From Collection1 */
+  --MainBlue: #3551a4;
+  --MainBase: #f3f2ee;
+  --MainContrast: #2e2523;
+  --MainGreen: #d6e264;
+  --Base0: #e6e6e6;
+  --Base1: #f6f6f6;
+  --Contrast1:#534d4c;
+  --Contrast2: #827c7b;
+  --Contrast3: #aba8a7;
+  --Contrast4: #d5d3d3;
+  --Blue0: #2b4389;
+  --Blue1: #3551a4;
+  --Blue2: #8697c8;
+  --Blue3: #aeb9db;
+  --Blue4: #d7dced;
+  --BlueGrey: #F3F4F5;
+  --Green2: #e6eea2;
+  --Green3: #eff3c1;
+  --Red: #fc3838;
+
+  /* break point other than header/footer */
+  --BreakPoint: 480px;
+
+  /* Fonts */
+  --HeadingFont: "Geologica", system-ui, sans-serif;
+  --BodyFont: "Hind", system-ui, sans-serif;
+
+  /* Radius */
+  --web-radius: 10px;
+  --web-small-radius: 5px;
+  --mobile-radius: 5px;
+  --mobile-layover-radius: 20px;
+  --round: 50px;
+}
+
+/* 基本的なフォントスタイル */
+body {
+  font-family: var(--BodyFont);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--HeadingFont);
+}
+
+/* ボタンスタイル */
+.btn-outline-green {
+  background-color: transparent;
+  border: 1.5px solid var(--MainGreen);
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-green:hover {
+  background-color: var(--MainGreen);
+  color: var(--MainContrast);
+}
+
+/* 無効状態のスタイル */
+.btn-outline-green:disabled {
+  border-color: var(--Contrast4);
+  color: var(--Contrast3);
+  cursor: not-allowed;
+}
+
+/* アクティブ状態のスタイル */
+.btn-outline-green:active {
+  transform: scale(0.98);
+}
+
+/* ==============================================*/
+/* Button outline Blue */
+/* ==============================================*/
+.btn-outline-blue {
+  background-color: transparent;
+  border: 1.5px solid var(--MainBlue);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--MainBlue);
+  border-radius: 50px;
+}
+
+.btn-outline-blue:hover {
+  background-color: var(--MainBase);
+  color: var(--MainBlue);
+}
+
+/* ==============================================*/
+/* Button blue */
+/* ==============================================*/
+.btn-blue {
+  background-color: var(--MainBlue);
+  border: 1.5px solid var(--MainBlue);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--MainBase);
+  border-radius: 50px;
+}
+
+.btn-blue:hover {
+  background-color: var(--Blue0);
+  color: var(--MainBase);
+}

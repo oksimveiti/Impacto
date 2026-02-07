@@ -1,0 +1,15 @@
+@media screen and (min-width: 768px) {
+  footer {
+    position: relative;
+  }
+
+  .footer-desktop {
+    position: relative;
+    margin-top: 40px;
+    min-height: 335px;
+  }
+}
+
+.event-type-buttons a {
+  font-size: 1rem !important;
+}

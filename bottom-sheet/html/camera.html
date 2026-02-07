@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Camera Page</title>
+<link rel="stylesheet" href="../../common-css.css">
+<link rel="stylesheet" href="../css/camera.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+<script type="module" src="../js/frontend/camera.js" defer></script>
+</head>
+<body>
+    <header>
+        <button id="backBtn">Back</button>
+        <p id="message"></p>
+    </header>
+    <div class="camera-section">
+        <video id="camera-view" autoplay playsinline></video>
+        <div class="buttons">
+            <button id="photo-btn" class="btn-blue"><i class="fa-solid fa-camera"></i></button>
+            <button id="video-btn" class="btn-blue"><i class="fa-solid fa-video"></i></button>
+            <button id="stop-btn" class="btn-blue" disabled><i class="fa-solid fa-stop"></i></button>
+            <button id="upload-btn" class="btn-blue"><i class="fa-solid fa-cloud-arrow-up"></i></button>
+        </div>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <img id="photo" alt="">
+        <video id="recorded-video" controls></video>
+    </div>
+</body>
+</html>

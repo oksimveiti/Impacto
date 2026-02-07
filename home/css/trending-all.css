@@ -1,0 +1,7 @@
+@media screen and (max-width: 768px) {
+#event-cards-trending {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+};

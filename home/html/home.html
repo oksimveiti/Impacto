@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="module" src="../js/frontend/home.js"></script>
+  <!-- <script type="module" src="../../header/header.js"></script> -->
+  <script type="module" src="../js/frontend/header-for-home.js"></script>
+  <title>Impact - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="../../common-css.css">
+  <!-- <link rel="stylesheet" href="../../header/header.css" /> -->
+  <link rel="stylesheet" href="../css/header-for-home.css" />
+  <link rel="stylesheet" href="../../bottom-sheet/css/bottom-sheet.css">
+  <script type="module" src="../../bottom-sheet/js/frontend/live-chat.js"></script>
+  <link rel="stylesheet" href="../css/event-cards.css">
+  <!-- <link rel="stylesheet" href="../../footer/footer.css"> -->
+  <link rel="stylesheet" href="../css/footer-for-home.css">
+  <link rel="stylesheet" href="../css/home.css" />
+
+  <link rel="icon" href="../../media/logo.png">
+  <link rel="stylesheet" href="../../footer/footer.css">
+  <script src="../../footer/footer.js"></script>
+  <link rel="stylesheet" href="../css/home-footer.css">
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="header-left">
+      <a href="../../../home/html/home.html" class="logo-link">
+        <img src="../../media/icons/Logo - CL.svg" class="logo" style="height: 60px;" />
+      </a>
+      <div class="search-container">
+        <div class="search-inputs">
+          <div class="search-input-wrapper">
+            <input type="text" placeholder="Search events" id="eventSearch" />
+          </div>
+          <div class="location-input-wrapper">
+            <i class="fas fa-map-marker-alt location-icon"></i>
+            <input type="text" placeholder="Vancouver" id="locationSearch" />
+            <button id="search-button" class="search-button">
+              <i class="fas fa-search" style="font-size: 1.1rem;"></i>
+            </button>
+          </div>
+        </div>
+        <div>
+          <a href="../../create-event-Naomi/html/event.html" class="create-button" style="height: 40px;">
+            <i class="fas fa-plus"></i>Create
+          </a>
+        </div>
+      </div>
+    </div>
+    <nav class="header-right">
+      <a href="../../authentication-Francisco/html/my-event.html" class="nav-link">
+        <div class="icon-text-container">
+          <i class="fa-regular fa-calendar-plus"></i>
+          <span>My Event</span>
+        </div>
+      </a>
+
+      <a href="../../../profile-settings-semih/html/settings.html" class="nav-link">
+        <div class="icon-text-container">
+          <!-- <i class="fa-solid fa-gear"></i>
+          <span>Settings</span> -->
+          <!-- <i class="fa-regular fa-bell"></i>
+          <span>Notification</span> -->
+        </div>
+      </a>
+      <div class="user-menu">
+        <button class="user-menu-button">
+          <img src="../../../media/impacto-logo.png" alt="User" id="userAvatar" />
+          <span id="userName">User Name</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="user-menu-dropdown">
+          <a href="../../authentication-Francisco/html/my-event.html">
+            <i class="fa-regular fa-calendar-plus"></i>My Event
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-user"></i>Profile Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fas fa-cog"></i>Account Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-circle-question"></i>Contact Support
+          </a>
+          <a href="#" id="logoutButton">
+            <i class="fas fa-sign-out-alt"></i>Log Out
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- added event modal-->
+  <div id="eventTypeModal" class="modal">
+    <div class=" modal-content" style="z-index: 1000;">
+      <h2>Select event type</h2>
+      <div class="event-type-buttons" style="display: flex; flex-direction: row;">
+        <a href="../../create-event-Naomi/html/event.html" class="btn-outline-blue"> Event </a>
+        <a href="../../create-event-Naomi/html/petition.html" class="btn-outline-blue"> Petition </a>
+        <a href="../../create-event-Naomi/html/event-petition.html" class="btn-outline-blue">
+          Event & Petition
+        </a>
+      </div>
+    </div>
+  </div>
+  </header>
+
+  <header class="mobile-only">
+    <div id="welcome-area">
+      <p id="welcome-home">Welcome home</p>
+      <p id="userName-mobile"></p>
+    </div>
+    <nav class="header-right">
+    </nav>
+  </header>
+
+  <main>
+    <section id="carousel">
+      <div class="carousel-windows">
+        <button id="carousel-prev" class="carousel-buttons"><img src="../../media/icons/left.png" alt=""></button>
+        <div id="carousel-strip">
+          <!-- <div class="carousel-slides">
+                  <img src="" alt=""/>
+                  <span class="carousel-titles"></span>
+                  <span class="carousel-date-times"></span>
+                  <span class="carousel-locations"></span>
+                </div> -->
+        </div>
+        <button id="carousel-next" class="carousel-buttons"><img src="../../media/icons/right.png" alt=""></button>
+      </div>
+      <div id="carousel-indicators-container"></div>
+    </section>
+
+    <section id="for-you-section">
+      <div class="section-headings">
+        <h2>For you</h2>
+        <a href="./for-you-all.html" class="see-all">See All</a>
+      </div>
+      <div class="carousel-windows">
+        <div id="event-cards-for-you" class="card-area-div"></div>
+      </div>
+    </section>
+
+    <section id="trending-section">
+      <div class="section-headings">
+        <h2>Trending</h2>
+        <a href="./trending-all.html" class="see-all">See All</a>
+      </div>
+      <div id="event-cards-trending" class="carousel-windows">
+        <button id="trending-prev" class="trending-carousel-buttons">
+          <img src="../../media/icons/left.png" alt="">
+        </button>
+        <div id="trending-carousel-strip">
+          <!-- <div class="trending-carousel-slides">
+                  <img src="" alt="" class="trending-image" />
+                  <div class="trending-meta-info">
+                    <h3 class="event-titles"></h3>
+                    <span class="trending-date-times"></span>
+                    <span class="trending-locations"></span>
+                    <span class="trending-type"></span>
+                  </div>
+                </div> -->
+        </div>
+        <button id="trending-next" class="trending-carousel-buttons">
+          <img src="../../media/icons/right.png" alt="">
+        </button>
+      </div>
+    </section>
+
+    <section id="recently-viewed-section">
+      <div class="section-headings">
+        <h2>Recently Viewed</h2>
+        <a href="./recently-viewed-all.html" class="see-all">See All</a>
+      </div>
+      <div class="carousel-windows">
+        <div id="event-cards-recently-viewed" class="card-area-div"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="z-index: 0;">
+    <div class="footer-mobile">
+      <nav>
+        <ul>
+          <li><a href="../../home/html/home.html" class="icon home-icon"></a>HOME</li>
+          <li><a href="../../list-view/html/list-view.html" class="icon search-icon"></a>SEARCH</li>
+          <li id="createBtn1"><a href="#" class="icon create-icon"></a>CREATE</li>
+          <li><a href="../../authentication-Francisco/html/my-event.html" class="icon my_event-icon"></a>MY
+            EVENT</li>
+          <li><a href="../../profile-settings-semih/html/settings.html" class="icon profile-icon"></a>PROFILE</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-desktop footer-desktop-hidden">
+      <div class="footer-body">
+        <div class="footer-left">
+          <div class="branding">
+            <img src="../../media/icons/Logo - BW.svg" alt="logo">
+            <p class="tagline">Raise your voice. Engage others. Amplify the effect.</br>Make our world a better place.
+            </p>
+          </div>
+          <div class="social-links">
+            <a href="#" target="_black" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_black" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_black" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div class="impacto">
+            <p>Impacto</p>
+            <nav>
+              <ul>
+                <li><a href="../../../home/html/home.html">HOME</a></li>
+                <li><a href="../../list-view/html/list-view.html">SEARCH</a></li>
+                <li id="createBtn2"><a href="#">CREATE EVENT</a>
+                </li>
+                <li><a href="../../authentication-Francisco/html/my-event.html">MY EVENT</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="support">
+            <p>Support</p>
+            <nav>
+              <ul>
+                <li><a href="../../profile-settings-semih/html/settings.html">FAQs</a></li>
+                <li><a href="../../profile-settings-semih/html/settings.html">Contact Us</a></li>
+                <li><a href="../../profile-settings-semih/html/settings.html">Privacy Policy</a></li>
+                <li><a href="../../profile-settings-semih/html/settings.html">Terms</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Impacto All Righs Reserved</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../../footer/footer-parent.js"></script>
+</body>
+
+</html>

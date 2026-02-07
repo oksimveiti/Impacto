@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="../../common-css.css" />
+  <link rel="stylesheet" href="../css/list-view.css" />
+  <link rel="stylesheet" href="../../home/css/event-cards.css" />
+  <!-- <link rel="stylesheet" href="../../header/header.css" /> -->
+  <link rel="stylesheet" href="../css/header-for-list-view.css" />
+  <link rel="icon" href="../../media/logo.png" />
+  <script type="module" src="../js/frontend/list-view.js"></script>
+  <script type="module" src="../js/frontend/sort-and-filter-list-view.js"></script>
+  <script type="module" src="../../header/header.js"></script>
+  <title>Impact - List view</title>
+  <!-- live chat -->
+  <link rel="stylesheet" href="../../bottom-sheet/css/bottom-sheet.css" />
+  <script type="module" src="../../bottom-sheet/js/frontend/live-chat.js"></script>
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="header-left">
+      <a href="../../../home/html/home.html" class="logo-link desktop-only">
+        <img src="../../media/icons/Logo - CL.svg" class="logo" style="height: 60px" />
+      </a>
+      <div class="search-container search-container-list-map">
+        <div class="search-inputs">
+          <div class="search-input-wrapper">
+            <input type="text" placeholder="Search events" id="eventSearch" />
+          </div>
+          <div class="location-input-wrapper">
+            <i class="fas fa-map-marker-alt location-icon"></i>
+            <input type="text" placeholder="Vancouver" id="locationSearch" />
+            <button id="search-button" class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <div>
+          <a href="../../create-event-Naomi/html/event.html" class="create-button">
+            <i class="fas fa-plus"></i>Create
+          </a>
+        </div>
+      </div>
+    </div>
+    <nav class="header-right desktop-only">
+      <a href="../../authentication-Francisco/html/my-event.html" class="nav-link">
+        <div class="icon-text-container">
+          <i class="fa-regular fa-calendar-plus"></i>
+          <span>My Event</span>
+        </div>
+      </a>
+
+      <a href="../../../profile-settings-semih/html/settings.html" class="nav-link">
+
+      </a>
+      <div class="user-menu">
+        <button class="user-menu-button">
+          <img src="../../../media/impacto-logo.png" alt="User" id="userAvatar" />
+          <span id="userName">User Name</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="user-menu-dropdown">
+          <a href="../../authentication-Francisco/html/my-event.html">
+            <i class="fa-regular fa-calendar-plus"></i>My Event
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-user"></i>Profile Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fas fa-cog"></i>Account Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-circle-question"></i>Contact Support
+          </a>
+          <a href="#" id="logoutButton">
+            <i class="fas fa-sign-out-alt"></i>Log Out
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- added event modal-->
+    <div id="eventTypeModal" class="modal desktop-only">
+      <div class="modal-content desktop-only">
+        <h2>Select Event Type</h2>
+        <div class="event-type-buttons">
+          <a href="../../create-event-Naomi/html/event.html" class="btn-outline-blue">
+            Event
+          </a>
+          <a href="../../create-event-Naomi/html/petition.html" class="btn-outline-blue">
+            Petition
+          </a>
+          <a href="../../create-event-Naomi/html/event-petition.html" class="btn-outline-blue">
+            Event & Petition
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <button id="switch-view-button">
+    <img src="../../media/icons/30*30/map.png" alt="map icon" />
+    <span>Map View</span>
+  </button>
+
+  <main>
+    <section id="top-navigations">
+      <nav id="category-filter">
+        <ul id="category-filter-ul">
+          <li class="button-filter-options" id="social">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324.png" alt="social activism icon" /><span>Social
+                Activitism</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="environment">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-1.png" alt="environment icon" /><span>Environment</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="politics">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-2.png" alt="politics icon" /><span>Politics</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="community">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-3.png" alt="community icon" /><span>Community</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="education">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-6.png" alt="education icon" /><span>Education</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="human">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-9.png" alt="human rights icon" /><span>Human Rights</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="health">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-12.png" alt="health icon" /><span>Health</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="culture">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-15.png" alt="colture icon" /><span>Culture</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="animal">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-18.png" alt="animal rights icon" /><span>Animal Rights</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="justice">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-21.png" alt="justice icon" /><span>Justice</span>
+            </div>
+          </li>
+          <li class="button-filter-options" id="others">
+            <div class="button-filter-option-div">
+              <img src="../../media/icons/30*30/Frame 324-24.png" alt="others icon" /><span>Others</span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <nav id="sort-filter-nav">
+        <section class="sort-and-filter">
+          <button id="sort-menu-btn">
+            <span>Sort by</span>
+            <span class="sort-icon"></span>
+          </button>
+          <button id="filter-menu-btn">
+            <span>Filter</span>
+            <div class="filter-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </section>
+      </nav>
+    </section>
+
+    <div id="filter-menu">
+      <div class="sort-filter-options">
+        <h3>Event Type</h3>
+        <ul id="filter-type-ul">
+          <li class="filter-options filter-options-type">
+            <label for="filter-type-event">Event</label><input type="checkbox" class="checkbox"
+              id="filter-type-event" />
+          </li>
+          <li class="filter-options filter-options-type">
+            <label for="filter-type-petition">Petition</label><input type="checkbox" class="checkbox"
+              id="filter-type-petition" />
+          </li>
+          <li class="filter-options filter-options-type">
+            <label for="filter-type-eventandpetition">Event & Petition</label><input type="checkbox" class="checkbox"
+              id="filter-type-eventandpetition" />
+          </li>
+        </ul>
+      </div>
+
+      <div class="sort-filter-options">
+        <h3>City</h3>
+        <ul id="filter-city-ul"></ul>
+      </div>
+
+      <div class="sort-filter-options">
+        <h3>Date</h3>
+        <ul id="filter-date-ul">
+          <li class="filter-options filter-options-date">
+            <label for="filter-date-today" class="filter-options">Today</label><input type="checkbox" class="checkbox"
+              id="filter-date-today" />
+          </li>
+          <li class="filter-options filter-options-date">
+            <label for="filter-date-tomorrow" class="filter-options">Tomorrow</label><input type="checkbox"
+              class="checkbox" id="filter-date-tomorrow" />
+          </li>
+          <li class="filter-options filter-options-date">
+            <label for="filter-date-weekend" class="filter-options">Weekend</label><input type="checkbox"
+              class="checkbox" id="filter-date-weekend" />
+          </li>
+        </ul>
+      </div>
+
+      <div class="sort-filter-options">
+        <h3>Start Time</h3>
+        <ul id="filter-time-ul">
+          <li class="filter-options filter-options-time">
+            <label for="filter-time-morning" class="filter-options">Morning (06:00 - 12:00)</label><input
+              type="checkbox" class="checkbox" id="filter-time-morning" />
+          </li>
+          <li class="filter-options filter-options-time">
+            <label for="filter-time-afternoon" class="filter-options">Afternoon (12:00 - 17:00)</label><input
+              type="checkbox" class="checkbox" id="filter-time-afternoon" />
+          </li>
+          <li class="filter-options filter-options-time">
+            <label for="filter-time-evening" class="filter-options">Evening (17:00 - 20:00)</label><input
+              type="checkbox" class="checkbox" id="filter-time-evening" />
+          </li>
+          <li class="filter-options filter-options-time">
+            <label for="filter-time-night" class="filter-options">Night (20:00 - 06:00)</label><input type="checkbox"
+              class="checkbox" id="filter-time-night" />
+          </li>
+        </ul>
+      </div>
+
+      <div class="sort-filter-options">
+        <h3>Category</h3>
+        <ul id="filter-category-ul">
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-social" class="filter-options">Social Activism </label><input type="checkbox"
+              class="checkbox" id="filter-category-social" />
+          </li>
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-politics" class="filter-options">Politics </label><input type="checkbox"
+              class="checkbox" id="filter-category-politics" />
+          </li>
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-community" class="filter-options">Community</label><input type="checkbox"
+              class="checkbox" id="filter-category-community" />
+          </li>
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-education" class="filter-options">Education</label><input type="checkbox"
+              class="checkbox" id="filter-category-education" />
+          </li>
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-human" class="filter-options">Human Rights</label><input type="checkbox"
+              class="checkbox" id="filter-category-human" />
+          </li>
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-health" class="filter-options">Health</label><input type="checkbox"
+              class="checkbox" id="filter-category-health" />
+          </li>
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-culture" class="filter-options">Culture</label><input type="checkbox"
+              class="checkbox" id="filter-category-culture" />
+          </li>
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-animal" class="filter-options">Animal Rights</label><input type="checkbox"
+              class="checkbox" id="filter-category-animal" />
+          </li>
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-justice" class="filter-options">Justice</label><input type="checkbox"
+              class="checkbox" id="filter-category-justice" />
+          </li>
+          <li class="filter-options filter-options-category">
+            <label for="filter-category-others" class="filter-options">Others</label><input type="checkbox"
+              class="checkbox" id="filter-category-others" />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="sort-menu">
+      <div class="sort-filter-options">
+        <ul>
+          <li class="sort-options" id="sort-latest">
+            <span>Latest</span>
+          </li>
+          <li class="sort-options" id="sort-trending">
+            <span>Trending</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <section id="list-view-section">
+      <div id="event-cards-all" class="card-area-div"></div>
+    </section>
+  </main>
+</body>
+
+</html>

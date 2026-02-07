@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Event</title>
+  <!-- Google Maps API -->
+  <!-- <script>
+      window.initMap = function () {}; // プレースホルダー関数
+    </script> -->
+  <!-- TinyMCE Local -->
+  <script src="../tinymce/js/tinymce/tinymce.min.js"></script>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <!-- event css -->
+  <link rel="stylesheet" href="../css/event.css" />
+  <link rel="stylesheet" href="../css/petition.css" />
+  <link rel="stylesheet" href="../../common-css.css" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;700&family=Hind:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <!-- event js -->
+  <script type="module" src="../js/js/frontend/petition.js"></script>
+  <link rel="stylesheet" href="../../header/header.css" />
+  <script type="module" src="../../header/header.js"></script>
+  <link rel="stylesheet" href="../css/header-mobile.css" />
+  <script type="module" src="../js/header-mobile.js"></script>
+  <!-- live chat -->
+  <link rel="stylesheet" href="../../bottom-sheet/css/bottom-sheet.css" />
+  <script type="module" src="../../bottom-sheet/js/frontend/live-chat.js"></script>
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="header-left">
+      <a href="../../../home/html/home.html" class="logo-link">
+        <!-- <img src="../../../media/logo.png" alt="Impact Logo" class="logo" />
+          <h1>Impacto</h1> -->
+        <img class="header-logo-blue" src="../../media/icons/Logo - CL.svg" alt="logo" />
+      </a>
+      <div class="search-container">
+        <div class="search-inputs">
+          <div class="search-input-wrapper">
+            <input type="text" placeholder="Search events..." id="eventSearch" />
+          </div>
+          <div class="location-input-wrapper">
+            <i class="fas fa-map-marker-alt location-icon"></i>
+            <input type="text" placeholder="Location..." id="locationSearch" />
+            <button class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <!-- <div>
+            <a href="./event.html" class="create-button">
+              <i class="fas fa-plus"></i>Create
+            </a>
+          </div> -->
+      </div>
+    </div>
+    <nav class="header-right">
+      <a href="../../authentication-Francisco/html/my-event.html" class="nav-link">
+        <div class="icon-text-container">
+          <i class="fa-regular fa-calendar-plus"></i>
+          <span>My Event</span>
+        </div>
+      </a>
+
+      <!-- <a
+          href="../../../profile-settings-semih/html/settings.html"
+          class="nav-link"
+        >
+          <div class="icon-text-container">
+            <i class="fa-regular fa-bell"></i>
+            <span>Notification</span>
+          </div>
+        </a> -->
+      <div class="user-menu">
+        <button class="user-menu-button">
+          <img src="../../../media/impacto-logo.png" alt="User" id="userAvatar" />
+          <span id="userName">User Name</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="user-menu-dropdown">
+          <a href="../../authentication-Francisco/html/my-event.html">
+            <i class="fa-regular fa-calendar-plus"></i>My Event
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-user"></i>Profile Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fas fa-cog"></i>Account Setting
+          </a>
+          <a href="./../../profile-settings-semih/html/settings.html">
+            <i class="fa-regular fa-circle-question"></i>Contact Support
+          </a>
+          <a href="#" id="logoutButton">
+            <i class="fas fa-sign-out-alt"></i>Log Out
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div id="eventTypeModal" class="modal">
+      <div class="modal-content">
+        <h2>Select Event Type</h2>
+        <div class="event-type-buttons">
+          <a href="./event.html" class="btn-outline-blue"> Event </a>
+          <a href="./petition.html" class="btn-outline-blue"> Petition </a>
+          <a href="./event-petition.html" class="btn-outline-blue">
+            Event & Petition
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <header class="mobile-header">
+    <div class="mobile-header-left">
+      <div class="icon-button back-button">
+        <i class="fa-solid fa-chevron-left"></i>
+      </div>
+    </div>
+    <div class="mobile-header-right">
+      <!-- <div class="icon-button dots-button">
+          <i class="fa-solid fa-ellipsis"></i>
+        </div> -->
+    </div>
+  </header>
+  <!-- <div id="userInfo"></div> -->
+  <h1>Create Petition</h1>
+  <div class="progress-bar">
+    <div class="step active">
+      <div class="step-circle"></div>
+      <div class="step-label create">Create</div>
+    </div>
+    <div class="step">
+      <div class="step-circle"></div>
+      <div class="step-label review">Review</div>
+    </div>
+    <div class="step publish">
+      <div class="step-circle"></div>
+      <div class="step-label publish">Publish</div>
+    </div>
+  </div>
+
+  <form id="eventForm" novalidate>
+    <div class="form-container form-group image-upload" id="imageUpload">
+      <div class="input-container image-upload-button">
+        <label for="eventImage" class="file-upload-label btn-blue">
+          <i class="fa-solid fa-image" style="color: #f3f2ee"></i>
+          Upload Photo
+        </label>
+        <input type="file" id="eventImage" accept="image/*" required style="display: none" />
+      </div>
+      <div id="imagePreview" class="image-preview"></div>
+    </div>
+
+    <div class="form-container form-group">
+      <input type="text" id="eventTitle" placeholder="Title" required />
+    </div>
+
+    <div class="form-container form-group">
+      <h2>Petition</h2>
+      <div class="petition-datetime-inputs">
+        <div class="date-container">
+          <label for="petition_startDate">Start Date:</label>
+          <input type="date" id="petition_startDate" name="petition_startDate" required min="" />
+        </div>
+        <div class="time-container">
+          <label for="petition_startTime">Start Time:</label>
+          <div class="select-wrapper">
+            <select id="petition_startTime" name="petition_startTime" class="custom-select" required>
+              <option value="00:00">00:00 AM</option>
+              <option value="01:00">01:00 AM</option>
+              <option value="02:00">02:00 AM</option>
+              <option value="03:00">03:00 AM</option>
+              <option value="04:00">04:00 AM</option>
+              <option value="05:00">05:00 AM</option>
+              <option value="06:00">06:00 AM</option>
+              <option value="07:00">07:00 AM</option>
+              <option value="08:00">08:00 AM</option>
+              <option value="09:00">09:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">13:00 PM</option>
+              <option value="14:00">14:00 PM</option>
+              <option value="15:00">15:00 PM</option>
+              <option value="16:00">16:00 PM</option>
+              <option value="17:00">17:00 PM</option>
+              <option value="18:00">18:00 PM</option>
+              <option value="19:00">19:00 PM</option>
+              <option value="20:00">20:00 PM</option>
+              <option value="21:00">21:00 PM</option>
+              <option value="22:00">22:00 PM</option>
+              <option value="23:00">23:00 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="date-container">
+          <label for="petition_endDate">End Date:</label>
+          <input type="date" id="petition_endDate" name="petition_endDate" required min="" />
+        </div>
+        <div class="time-container">
+          <label for="petition_endTime">End Time:</label>
+          <div class="select-wrapper">
+            <select id="petition_endTime" name="petition_endTime" class="custom-select" required>
+              <option value="00:00">00:00 AM</option>
+              <option value="01:00">01:00 AM</option>
+              <option value="02:00">02:00 AM</option>
+              <option value="03:00">03:00 AM</option>
+              <option value="04:00">04:00 AM</option>
+              <option value="05:00">05:00 AM</option>
+              <option value="06:00">06:00 AM</option>
+              <option value="07:00">07:00 AM</option>
+              <option value="08:00">08:00 AM</option>
+              <option value="09:00">09:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">13:00 PM</option>
+              <option value="14:00">14:00 PM</option>
+              <option value="15:00">15:00 PM</option>
+              <option value="16:00">16:00 PM</option>
+              <option value="17:00">17:00 PM</option>
+              <option value="18:00">18:00 PM</option>
+              <option value="19:00">19:00 PM</option>
+              <option value="20:00">20:00 PM</option>
+              <option value="21:00">21:00 PM</option>
+              <option value="22:00">22:00 PM</option>
+              <option value="23:00">23:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <p id="error-message" style="color: red; display: none">
+          End date/time must be after start date/time.
+        </p>
+      </div>
+    </div>
+    <div class="form-container form-group">
+      <h2>Target</h2>
+      <div class="input-container">
+        <input type="number" id="petitionTarget" min="1" required aria-label="Target" />
+      </div>
+    </div>
+
+    <div class="form-container form-group category-section">
+      <h2>Category</h2>
+      <div class="category-buttons">
+        <button type="button" class="category-btn btn-outline-green" data-category="social">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Social Activism</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="environment">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Environment</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="politics">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Politics</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="community">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Community</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="education">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Education</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="human">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Human Rights</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="health">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Health</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="culture">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Culture</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="animal">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Animal Rights</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="justice">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Justice</span>
+        </button>
+        <button type="button" class="category-btn btn-outline-green" data-category="others">
+          <span class="icon_plus"><i class="fa-solid fa-plus"></i></span>
+          <span class="icon_minus"><i class="fa-solid fa-minus"></i></span>
+          <span class="label">Others</span>
+        </button>
+      </div>
+      <input type="hidden" id="selectedCategory" required />
+    </div>
+
+    <div class="form-container form-group">
+      <h2>Description</h2>
+      <div class="input-container">
+        <textarea id="eventDetails" required aria-label="Description"></textarea>
+      </div>
+    </div>
+
+    <button type="button" class="clear-all" id="clearEventButton">
+      Clear All
+    </button>
+    <div class="button-group">
+      <button id="saveDraftButton" class="btn-outline-blue">
+        Save Draft
+      </button>
+      <button id="saveContinueButton" class="btn-blue" type="submit">
+        Save & Continue
+      </button>
+    </div>
+  </form>
+</body>
+
+</html>
